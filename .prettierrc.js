@@ -1,11 +1,11 @@
-const moduls = {
+const modules = {
   arrowParens: 'always',
   bracketSpacing: true,
   bracketSameLine: true,
   embeddedLanguageFormatting: 'auto',
   endOfLine: 'lf',
   jsxBracketSameLine: false,
-  printWidth: 80,
+  printWidth: 120,
   quoteProps: 'as-needed',
   semi: true,
   singleQuote: true,
@@ -14,4 +14,4 @@ const moduls = {
   useTabs: false,
 };
 
-export default moduls;
+export default modules;
