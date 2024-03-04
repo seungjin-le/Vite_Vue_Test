@@ -22,7 +22,6 @@ export default {
       () => props.userName.item,
       (newValue, oldValue) => {
         item.value = newValue;
-        console.log(item.value);
       }
     );
     return {
