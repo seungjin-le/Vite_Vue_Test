@@ -18,18 +18,20 @@ import axios from 'axios';
 export default defineComponent({
   name: 'MainLayout',
   components: { MainFooter, MainSection, MainHeader },
+
   setup() {
     const userNameRef = ref({
       name: 'John Doe',
       email: ' [email protected]',
-      data: null, // 초기에는 데이터가 없다고 가정합니다.
+      data: null,
     });
-    const { isPending, isFetching, isError, data, error } = useQuery({
+    const { isPending, data, error } = useQuery({
       queryKey: ['todos'],
-      queryFn: async () => {
-        const { data } = await axios.get('https://jsonplaceholder.typicode.com/todos');
-        return data;
-      },
+      queryFn: () =>
+        axios
+          .get('https://jsonplaceholder.typicode.com/todos')
+          .then((res) => res.data)
+          .catch((err) => console.log(err)),
     });
     userNameRef.value.item = data;
 

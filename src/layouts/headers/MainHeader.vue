@@ -1,7 +1,8 @@
 <template>
-  <div class="w-full bg-[red] min-h-[80px]">asdf</div>
-  <div>{{ userName.name }}</div>
-  <div>{{ userName.email }}</div>
+  <div class="flex flex-row py-[15px] text-2xl items-center justify-end">
+    <div>{{ userName.name }}</div>
+    <div>{{ userName.email }}</div>
+  </div>
   <div>
     <div v-if="item">
       <div v-for="i in item" :key="i.id">
